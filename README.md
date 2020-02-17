@@ -1,7 +1,7 @@
-# Telegram-Bot - BETA 4.0.0 
+# telegram-lua-library - 1.0
  Lua Library for the Telegram-API 
 
-# [Telegram Group](https://t.me/crcoproject)
+# [Telegram Group](https://t.me/crco_bugs)
 
 # installing
 
