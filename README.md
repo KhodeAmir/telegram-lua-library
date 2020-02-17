@@ -1,2 +1,41 @@
-# telegram-lua-library-BETA
-a power full telegram-lua-library
+# Telegram-Bot - BETA 4.0.0 
+ Lua Library for the Telegram-API 
+
+# [Telegram Group](https://t.me/crcoproject)
+
+# installing
+
+Install luarocks and : `git`,`lua-curl`, `lua5.3`, , `liblua` , `serpent` , `dkjson` , `lua-requests` , `lunajson` , `luasocket` , `ltn12` , `luasec` ,  `redis-lua`., `md5` , `xml`
+
+
+## Using : 
+- Import `td-getupdate.lua` into the bot.
+- Call the functions.
+
+See example script below.
+
+
+```lua
+
+CRCO  = require("telegram-lua-library.TD-UPDATE.td-getupdate")
+            
+function CRCO:getMessage(msg)
+    CRCO:vardump(msg)
+    if msg.content.text == 'ping' then
+        CRCO:vardump(msg)
+CRCO:sendMessage(msg.on.chat_id,'READY',msg.on.id,'html')
+end
+end
+CRCO:setconfig{
+    token = '' --you'r token
+}    
+CRCO:RUNING()
+
+
+```
+
+
+
+
+
+## CRCO - Amir Bagheri
