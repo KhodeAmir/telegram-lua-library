@@ -2,7 +2,7 @@ CRCO_ = require('td-table.TD-ROS')
 
 curl = require('cURL')
 
-json = require('rapidjson') -- TESTING
+json = require('dkjson') -- TESTING
 
 
 CRCO = CRCO_:ROS()
