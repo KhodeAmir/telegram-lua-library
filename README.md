@@ -5,7 +5,7 @@
 
 # installing
 
-Install luarocks and : `git`,`lua-curl`, `lua5.3`, , `liblua` , `serpent` , `dkjson` , `lua-requests` , `lunajson` , `luasocket` , `ltn12` , `luasec` ,  `redis-lua`., `md5` , `xml`
+Install luarocks and : `git`,`lua-curl`, `lua5.3`, , `liblua` , `serpent` , `dkjson` , `luasocket` , `ltn12` , `luasec` ,  
 
 
 ## Using : 
