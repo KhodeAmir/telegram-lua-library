@@ -21,7 +21,8 @@ function CRCO:vardump(value)
     CRCO.setting_config = {}
             CRCO.MainLastUpdate = 0
         CRCO.MainUpdateQueue = {}
-
+CRCO.grouplist = {}
+CRCO.users = {}
 function CRCO:setconfig(cfg)
       self.setting_config = cfg     
 
@@ -60,7 +61,6 @@ function CRCO:Main_URL(method)
 end
 function CRCO:apiRequest (method, data)
 
-
     self.MainUpdateMeta = ''
     self.MainUpdateRequest = json.encode(data)
      curl.easy{
@@ -72,7 +72,6 @@ function CRCO:apiRequest (method, data)
             'Content-Length: ' .. string.len(self.MainUpdateRequest),
             'Expect:'
         },
-        [curl.OPT_TIMEOUT] = 25
     }
     :setopt(curl.OPT_POST, 1) 
     :perform()
@@ -81,10 +80,11 @@ function CRCO:apiRequest (method, data)
 end
 
 function CRCO:getUpdates ()
+
     self:apiRequest('getUpdates', {offset = self.MainLastUpdate, limit = 10})
     self.MainUpdate = json.decode(self.MainUpdateMeta)
-    
     self:handleMainUpdate()
+   
 end
 
 
@@ -96,11 +96,10 @@ function CRCO:PreMessage ()
     end
 end
 
-
 function CRCO:handleMainUpdate()
     if self.MainUpdate.ok  then
         for tttt,msg in ipairs(self.MainUpdate.result) do
-            if msg.message then
+            if msg then
                 if (msg.update_id >= self.MainLastUpdate) then
                     self.MainLastUpdate = msg.update_id + 1
                 end
