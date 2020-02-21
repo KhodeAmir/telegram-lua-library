@@ -23,15 +23,3 @@ function CRCO_:ROS()
   
     return VAL_
 end
-
-function CRCO_.ROSFROM(PART)
-    local VAL_ = {}
-    setmetatable(VAL_, {
-        __index = PART
-    })
-    return VAL_
-end
-
-return CRCO_
-
- 
