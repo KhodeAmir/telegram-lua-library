@@ -21,9 +21,9 @@ CRCO  = require("telegram-lua-library.TD-UPDATE.td-getupdate")
             
 function CRCO:getMessage(msg)
     CRCO:vardump(msg)
-    if msg.content.text == 'ping' then
+    if msg.text == 'ping' then
         CRCO:vardump(msg)
-CRCO:sendMessage(msg.on.chat_id,'READY',msg.on.id,'html')
+CRCO:sendMessage(msg.chat.id,'READY',msg.message_id,'html')
 end
 end
 CRCO:setconfig{
